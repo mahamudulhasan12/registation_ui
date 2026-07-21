@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:registation_ui/reg%20process/loginpage.dart';
 
-import '../welcome_screen.dart';
+import '../screen/welcome_screen.dart';
 
 class RecoverPassword extends StatefulWidget {
   const RecoverPassword({super.key});

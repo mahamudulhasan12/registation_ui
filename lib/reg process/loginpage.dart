@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:registation_ui/welcome_screen.dart';
+import 'package:registation_ui/screen/welcome_screen.dart';
 import 'package:registation_ui/reg%20process/revocer_passworld.dart';
 import 'package:registation_ui/reg%20process/sign_up_page.dart';
 

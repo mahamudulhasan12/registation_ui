@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:registation_ui/screen/home_screen.dart';
 
-import 'welcome_screen.dart';
+import 'screen/welcome_screen.dart';
 
 void main(){
   runApp(const MyApp());
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData.light(),
       debugShowCheckedModeBanner: false,
-      home: WelcomeScreen(),
+      home: HomeScreen(),
     );
   }
 }

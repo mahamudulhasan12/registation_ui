@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:registation_ui/homepage.dart';
-import 'package:registation_ui/revocer_passworld.dart';
-import 'package:registation_ui/sign_up_page.dart';
+import 'package:registation_ui/welcome_screen.dart';
+import 'package:registation_ui/reg%20process/revocer_passworld.dart';
+import 'package:registation_ui/reg%20process/sign_up_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -18,7 +18,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(onPressed: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
+          Navigator.push(context, MaterialPageRoute(builder: (context)=>WelcomeScreen()));
         }, icon:Icon(Icons.arrow_back)
         ),
         toolbarHeight: 30,
@@ -42,7 +42,7 @@ class _LoginPageState extends State<LoginPage> {
           SizedBox(height: 40,),
           Column(
             children: [
-              TextField(
+              TextField(  // use Custom TextField
                 controller: email,
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
@@ -95,7 +95,7 @@ class _LoginPageState extends State<LoginPage> {
                   color: Colors.redAccent,
                 ),
                 child: TextButton(onPressed: (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>HomePage()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>WelcomeScreen()));
                 },
                   child: Text("Sing in",style: TextStyle(
                       fontSize: 19,

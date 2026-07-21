@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:registation_ui/loginpage.dart';
-import 'package:registation_ui/sign_up_page.dart';
+import 'package:registation_ui/reg%20process/loginpage.dart';
+import 'package:registation_ui/reg%20process/sign_up_page.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+class WelcomeScreen extends StatefulWidget {
+  const WelcomeScreen({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<WelcomeScreen> createState() => _WelcomeScreenState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

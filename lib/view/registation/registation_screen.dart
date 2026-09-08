@@ -61,7 +61,7 @@ class _RegistationScreenState extends State<RegistationScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             spacing: 5,
             children: [
-              AppText(text: "Alrady have and accounts ",fontSize: 15,),
+              AppText(text: "Already have and accounts ",fontSize: 15,),
               TextButton(onPressed: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
               }, child: AppText(text: "Login")),

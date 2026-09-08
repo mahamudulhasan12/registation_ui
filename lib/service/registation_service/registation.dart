@@ -1,5 +1,5 @@
 class Registation {
-  Future Ragistation()async{
-
-  }
+  // Future Ragistation()async{
+  //
+  // }
 }

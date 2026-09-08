@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:registation_app/view/login/widget/socila_button.dart';
+import 'package:registation_app/view/registation/registation_screen.dart';
+
+import '../../custsom widget/app_button.dart';
+
 
 
 
@@ -14,6 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
   bool isPasswordVisible = false;
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -166,38 +172,7 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(
                 height: 58,
                 width: double.infinity,
-                child: ElevatedButton(
-                  onPressed:(){
-
-                  },
-                  style: ElevatedButton.styleFrom(
-                    elevation: 0,
-                    backgroundColor: Colors.transparent,
-                    padding: EdgeInsets.zero,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                  ),
-                  child: Ink(
-                    decoration: BoxDecoration(
-                      gradient: const LinearGradient(
-                        colors: [Color(0xffFF416C), Color(0xffFF4B2B)],
-                      ),
-                      borderRadius: BorderRadius.circular(16),
-                    ),
-                    child: Container(
-                      alignment: Alignment.center,
-                      child: const Text(
-                        "Login",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 17,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
+                child: AppButon(onPressed: () { }, text: 'Login',),
               ),
 
               const SizedBox(height: 30),
@@ -226,18 +201,19 @@ class _LoginScreenState extends State<LoginScreen> {
               Row(
                 children: [
                   Expanded(
-                    child: socialButton(
+                    child: SocilaButton(
                       icon: Icons.g_mobiledata_rounded,
                       title: "Google",
-                      onTap: () {},
+                      onTab: () {},
                     ),
                   ),
                   const SizedBox(width: 12),
                   Expanded(
-                    child: socialButton(
+                    child: SocilaButton(
                       icon: Icons.facebook_rounded,
                       title: "Facebook",
-                      onTap: () {},
+                      onTab: () {},
+
                     ),
                   ),
                 ],
@@ -255,6 +231,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   TextButton(
                     onPressed: () {
                       // Navigator.push(context, MaterialPageRoute(builder:(context)=>RegistationScreen()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>RegistationScreen()));
                     },
                     child: const Text(
                       "Sign up",
@@ -275,33 +252,6 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 
-  Widget socialButton({
-    required IconData icon,
-    required String title,
-    required VoidCallback onTap,
-  }) {
-    return SizedBox(
-      height: 52,
-      child: OutlinedButton.icon(
-        onPressed: onTap,
-        icon: Icon(icon, color: Colors.black87, size: 24),
-        label: Text(
-          title,
-          style: const TextStyle(
-            color: Colors.black87,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-        style: OutlinedButton.styleFrom(
-          backgroundColor: Colors.white,
-          side: BorderSide(color: Colors.grey.shade300),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(14),
-          ),
-        ),
-      ),
-
-    );
-  }
 }
+
 

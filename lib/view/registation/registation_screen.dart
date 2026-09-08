@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:registation_app/custsom%20widget/app_button.dart';
+import 'package:registation_app/custsom%20widget/app_text.dart';
+import 'package:registation_app/view/login/login_screen.dart';
+import 'package:registation_app/view/registation/widget/app_textfield.dart';
 
 class RegistationScreen extends StatefulWidget {
   const RegistationScreen({super.key});
@@ -10,135 +14,63 @@ class RegistationScreen extends StatefulWidget {
 class _RegistationScreenState extends State<RegistationScreen> {
   TextEditingController nameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
-  TextEditingController passwordController =TextEditingController();
+  TextEditingController passwordController = TextEditingController();
   TextEditingController confirmPassword = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text("Registraion"),
-      ),
+      appBar: AppBar(centerTitle: true, title: Text("Registraion")),
       // backgroundColor:Colors.transparent,
-      body: Stack(
+      body: ListView(
+        padding: EdgeInsets.all(10),
         children: [
-          Container(
-            padding: EdgeInsets.only(left: 35,right: 135,top: 65,bottom: 140),
-            child: Text("Create\n Acount",style: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-              fontSize: 35,
-            ),),
-
-          ),
-          SingleChildScrollView(
-            child: Container(
-              padding: EdgeInsets.only(top: MediaQuery.of(context).size.height*0.5,
-                left: 35,
-                right: 35,
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              AppText(
+                text: "Create Your",
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                colors: Colors.black,
               ),
-              child: Column(
-                children: [
-                  TextField(
-                    controller: nameController,
-                    decoration: InputDecoration(
-                      filled: true,
-                      fillColor: Colors.white,
-                      hintText: "Name",
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(10),
-                        borderSide: BorderSide(width: 0.5,color: Colors.grey)
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 35,
-                  ),
-                  TextField(
-                    controller: emailController,
-                    keyboardType: TextInputType.emailAddress,
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      hintText: "E-mail",
-                      fillColor: Colors.white70,
-                      filled: true,
-                      border: OutlineInputBorder(
-
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 35,
-                  ),
-                  TextField(
-                    controller: passwordController,
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      hintText: "Password",
-                      fillColor: Colors.white70,
-                      filled: true,
-                      border: OutlineInputBorder(
-
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                  ),
-                  TextField(
-                    controller: confirmPassword,
-                    keyboardType: TextInputType.visiblePassword,
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      hintText: "Confirm password",
-                      fillColor: Colors.white70,
-                      filled: true,
-                      border: OutlineInputBorder(
-
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                    ),
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text("Sing In",style: TextStyle(
-                        fontSize: 30,
-                        fontWeight: FontWeight.w100,
-                        color: Colors.black54,
-                      ),),
-                      CircleAvatar(
-                        radius: 10,
-                        backgroundColor: Colors.black54,
-                        child: IconButton(onPressed: (){}, icon: Icon(Icons.arrow_forward)),
-                      )
-
-                    ],
-                  ),
-                  SizedBox(
-                    height: 35,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      TextButton(onPressed: (){
-                        // Navigator.pushNamed(context, 'register');
-                      }, child: Text("Sing Up",style: TextStyle(
-                        fontSize: 25,
-                        fontWeight: FontWeight.w200,
-                        color: Colors.black54,
-                        decoration: TextDecoration.underline,
-
-                      ),)),
-
-                    ],
-                  ),
-                ],
+              AppText(
+                text: "account's",
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+                colors: Colors.black,
               ),
-            ),
+            ],
           ),
+          SizedBox(height: 20,),
+          AppTextField(controller: nameController, hintText: "Enter your name", icon: Icons.person, keybordText: TextInputType.name),
+          SizedBox(height: 20),
+          AppTextField(controller: emailController, hintText: "Enter email", icon: Icons.email, keybordText: TextInputType.emailAddress),
+          SizedBox(height: 20),
+          AppTextField(controller: passwordController, hintText: "password", icon: Icons.lock, keybordText: TextInputType.visiblePassword,),
+          SizedBox(height: 20,),
+          AppTextField(controller: confirmPassword, hintText: "Confirm password", icon: Icons.lock, keybordText: TextInputType.visiblePassword,),
+          SizedBox(height: 15,),
+          SizedBox(
+            height: 50,
+              child: AppButon(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
+              }, text: "Sign in")),
+          SizedBox(height: 20),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            spacing: 5,
+            children: [
+              AppText(text: "Alrady have and accounts ",fontSize: 15,),
+              TextButton(onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginScreen()));
+              }, child: AppText(text: "Login")),
+            ],
+          )
         ],
       ),
     );
-
   }
 }
+
+

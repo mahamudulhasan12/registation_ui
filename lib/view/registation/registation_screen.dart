@@ -42,7 +42,7 @@ class _RegistationScreenState extends State<RegistationScreen> {
               ),
             ],
           ),
-          SizedBox(height: 20,),
+          SizedBox(height: 10,),
           AppTextField(controller: nameController, hintText: "Enter your name", icon: Icons.person, keybordText: TextInputType.name),
           SizedBox(height: 20),
           AppTextField(controller: emailController, hintText: "Enter email", icon: Icons.email, keybordText: TextInputType.emailAddress),
